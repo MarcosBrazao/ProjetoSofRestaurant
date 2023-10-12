@@ -11,7 +11,7 @@ import modelo.ModeloRecuperarSenha;
  *
  * @author marco
  */
-public class ControleRecuperaSenha{
+public class ControleRecuperarSenha{
     ConectaBanco conexao = new ConectaBanco();
     ModeloRecuperarSenha mod = new ModeloRecuperarSenha();
     public String RetornaPergunta(String nomeusuario){
