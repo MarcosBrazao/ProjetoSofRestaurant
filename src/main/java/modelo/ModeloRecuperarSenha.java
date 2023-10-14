@@ -1,16 +1,15 @@
-
 package modelo;
-
 
 /**
  *
  * @author marco
  */
 public class ModeloRecuperarSenha {
+
     private String pergunta;
     private String resposta;
     private String usuario;
-    private String senha; 
+    private String senha;
 
     /**
      * @return the pergunta
@@ -68,5 +67,3 @@ public class ModeloRecuperarSenha {
         this.senha = senha;
     }
 }
-    
- 

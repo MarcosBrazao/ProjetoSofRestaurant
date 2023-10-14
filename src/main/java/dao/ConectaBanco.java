@@ -21,17 +21,17 @@ public class ConectaBanco {
         try {// tentativa inicial de conexão
             System.setProperty("jdbc.Drivers", "driver");// define a propriedade do driver de conexão
             conn = DriverManager.getConnection(caminho, usuario, senha);// realiza conexão com banco de dados
-          //  JOptionPane.showMessageDialog(null, "Conectado com sucesso!!"); // imprime menssagem 
+            //  JOptionPane.showMessageDialog(null, "Conectado com sucesso!!"); // imprime menssagem 
         } catch (SQLException ex) {// tentaiva falhar excessão de resposta
             Logger.getLogger(ConectaBanco.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, "Erro de Conexão!!\n Erro" + ex.getMessage());// imprime menssagem
         }
 
     }
-    
-    public void executaSQL(String sql){
+
+    public void executaSQL(String sql) {
         try {
-            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE,rs.CONCUR_READ_ONLY);
+            stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
             rs = stm.executeQuery(sql);
         } catch (SQLException ex) {
             Logger.getLogger(ConectaBanco.class.getName()).log(Level.SEVERE, null, ex);

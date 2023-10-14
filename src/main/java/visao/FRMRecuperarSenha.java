@@ -17,12 +17,10 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
     /**
      * Creates new form FRMRecuperarSenha
      */
-    
     String nickname;
     ModeloRecuperarSenha mod = new ModeloRecuperarSenha();
     ControleRecuperarSenha control = new ControleRecuperarSenha();
-    
-    
+
     public FRMRecuperarSenha() {
         initComponents();
     }
@@ -125,9 +123,9 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
         String senha;
         mod.setResposta(jTextFieldResposta.getText());
         senha = control.validaResposta(mod);
-        JOptionPane.showMessageDialog(null, "Sua senha é: "+senha);
+        JOptionPane.showMessageDialog(null, "Sua senha é: " + senha);
         dispose();
-        
+
     }//GEN-LAST:event_jButtonRespostaMouseClicked
 
     /**
@@ -164,12 +162,12 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
             }
         });
     }
-    
-    public void recuperarLogin(String nick){
+
+    public void recuperarLogin(String nick) {
         nickname = nick;
         mod.setUsuario(nickname);
         String pergunta = control.retornaPergunta(mod);
-        jLabelPergunta.setText (pergunta);
+        jLabelPergunta.setText(pergunta);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

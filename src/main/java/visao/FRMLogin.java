@@ -16,7 +16,7 @@ import modelo.ModeloLogin;
 public class FRMLogin extends javax.swing.JFrame {
 
     ConectaBanco conecta = new ConectaBanco();
-    
+
     ModeloLogin modelLog = new ModeloLogin();
     ControleLogin controlLog = new ControleLogin();
 
@@ -172,7 +172,7 @@ public class FRMLogin extends javax.swing.JFrame {
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         // TODO add your handling code here:
-      System.exit(0);
+        System.exit(0);
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogarActionPerformed
@@ -185,10 +185,10 @@ public class FRMLogin extends javax.swing.JFrame {
         modelLog.setLogin(login);
         modelLog.setSenha(senha);
         retorno = controlLog.validaLogin(modelLog);
-        if(retorno==true){
+        if (retorno == true) {
             FRMPrincipal frm = new FRMPrincipal();
             frm.setVisible(true);
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Usuário e senha inválidos!!");
         }
     }//GEN-LAST:event_jButtonLogarActionPerformed
@@ -203,7 +203,7 @@ public class FRMLogin extends javax.swing.JFrame {
 
     private void jButtonRecuperaSenhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRecuperaSenhaMouseClicked
         // TODO add your handling code here:
-        FRMRecuperarSenha frm = new FRMRecuperarSenha ();
+        FRMRecuperarSenha frm = new FRMRecuperarSenha();
         frm.setVisible(true);
         frm.recuperarLogin(jTextFieldLogin.getText());
     }//GEN-LAST:event_jButtonRecuperaSenhaMouseClicked
