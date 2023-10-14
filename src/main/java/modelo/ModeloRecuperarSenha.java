@@ -10,6 +10,7 @@ public class ModeloRecuperarSenha {
     private String pergunta;
     private String resposta;
     private String usuario;
+    private String senha; 
 
     /**
      * @return the pergunta
@@ -51,6 +52,20 @@ public class ModeloRecuperarSenha {
      */
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+    /**
+     * @return the senha
+     */
+    public String getSenha() {
+        return senha;
+    }
+
+    /**
+     * @param senha the senha to set
+     */
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
     

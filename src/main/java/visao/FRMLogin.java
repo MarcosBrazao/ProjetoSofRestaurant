@@ -205,6 +205,7 @@ public class FRMLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         FRMRecuperarSenha frm = new FRMRecuperarSenha ();
         frm.setVisible(true);
+        frm.recuperarLogin(jTextFieldLogin.getText());
     }//GEN-LAST:event_jButtonRecuperaSenhaMouseClicked
 
     /**

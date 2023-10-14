@@ -4,6 +4,10 @@
  */
 package visao;
 
+import controle.ControleRecuperarSenha;
+import javax.swing.JOptionPane;
+import modelo.ModeloRecuperarSenha;
+
 /**
  *
  * @author marco
@@ -13,6 +17,12 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
     /**
      * Creates new form FRMRecuperarSenha
      */
+    
+    String nickname;
+    ModeloRecuperarSenha mod = new ModeloRecuperarSenha();
+    ControleRecuperarSenha control = new ControleRecuperarSenha();
+    
+    
     public FRMRecuperarSenha() {
         initComponents();
     }
@@ -48,6 +58,11 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
         jLabelPergunta.setText("jLabel3");
 
         jButtonResposta.setText("Responder");
+        jButtonResposta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonRespostaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -105,6 +120,16 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonRespostaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonRespostaMouseClicked
+        // TODO add your handling code here:
+        String senha;
+        mod.setResposta(jTextFieldResposta.getText());
+        senha = control.validaResposta(mod);
+        JOptionPane.showMessageDialog(null, "Sua senha é: "+senha);
+        dispose();
+        
+    }//GEN-LAST:event_jButtonRespostaMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -138,6 +163,13 @@ public class FRMRecuperarSenha extends javax.swing.JFrame {
                 new FRMRecuperarSenha().setVisible(true);
             }
         });
+    }
+    
+    public void recuperarLogin(String nick){
+        nickname = nick;
+        mod.setUsuario(nickname);
+        String pergunta = control.retornaPergunta(mod);
+        jLabelPergunta.setText (pergunta);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
